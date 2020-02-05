@@ -60,7 +60,7 @@ module RpushWeb
           controller: mapping[:controllers],
           as: :feedbacks,
           path: 'feedbacks',
-          only: [:index]
+          only: [:index])
       end
 
       def device_routes(mapping)
