@@ -1,6 +1,6 @@
 require_dependency 'rpush_web/application_controller'
 
-class RpushWeb::DevicesController < ApplicationController
+class RpushWeb::FeedbacksController < ApplicationController
   skip_before_filter :verify_authenticity_token
   layout 'rpush_web'
 
