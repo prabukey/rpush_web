@@ -1,0 +1,19 @@
+<table class="u-full-width">
+  <thead>
+    <tr>
+      <th>Platform</th>
+      <th>Device token</th>
+      <th>Failed at</th>
+      <th>Created at</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @collection.each do |item| %>
+      <tr>
+        <td><a class="button"><i class="fa fa-<%= item.platform.eql?('ios') ? 'apple' : 'android' %>"></i><%= item.platform.eql?(1) ? 'IOS' : 'Android' %></a></td>
+        <td><%= item.token %></td>
+        <td><%=l item.created_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

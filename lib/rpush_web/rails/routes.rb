@@ -24,6 +24,7 @@ module RpushWeb
         @mapping = Mapper.new.map(&@block)
         routes.scope options[:scope] || 'rpush_web', as: 'rpush_web' do
           map_route(:devices, :device_routes)
+          map_route(:feedbacks, :feedbacks_routes)
           map_route(:mobile_application_settings, :mobile_application_setting_routes)
           map_route(:push_notifications, :push_notification_routes)
         end
@@ -51,6 +52,15 @@ module RpushWeb
           controller: mapping[:controllers],
           as: :push_notifications,
           path: 'push_notifications')
+      end
+
+      def feedbacks_routes(mapping)
+        routes.resources(
+          :feedbacks,
+          controller: mapping[:controllers],
+          as: :feedbacks,
+          path: 'feedbacks',
+          only: [:index]
       end
 
       def device_routes(mapping)

@@ -7,6 +7,7 @@ module RpushWeb
         def initialize
           @controllers = {
             devices: 'rpush_web/devices',
+            feedbacks: 'rpush_web/feedbacks',
             push_notifications: 'rpush_web/push_notifications',
             mobile_application_settings: 'rpush_web/mobile_application_settings'
           }
